@@ -31,7 +31,7 @@
                                         {{ $index }}
                                     </td>
                                     <td>
-                                        <img class="img-thumbnail" width="120px" height="100px" src="{{ url('../storage/app/' . $user->profile_image) }}">
+                                        <img class="img-thumbnail" width="120px" height="100px" src="{{ url('documents/' . $user->profile_image) }}">
                                     </td>
                                     <td>
                                         {{ $user->name }}

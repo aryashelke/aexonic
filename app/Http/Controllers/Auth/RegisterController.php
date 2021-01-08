@@ -125,7 +125,7 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         $file = $request->file('profile_image');
-        $file_path = Storage::putFileAs('profile-image', $file, $file->getClientOriginalName());
+        $file_path = Storage::disk('local-public')->putFileAs('profile-image', $file, $file->getClientOriginalName());
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all(), $file_path)));
